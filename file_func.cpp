@@ -61,14 +61,16 @@ int main(){
 
     int option;
 
-    string fileMethods[3] = {
+    string fileMethods[5] = {
         "Create (+)",
         "Write (+)",
-        "Read (-)"
+        "Read (-)",
+        "Update (+)",
+        "Delete (-)"
     };
 
     //print file options
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 5; i++)
     {
         cout << i+1 << ". "<< fileMethods[i] << endl; 
         /* code */
@@ -92,6 +94,8 @@ int main(){
         //creating and opening a file
         readFile(filename);
         break;
+
+    
 
     default:
         break;

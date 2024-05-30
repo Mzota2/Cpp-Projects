@@ -2,6 +2,7 @@
 #include <fstream>
 #include <ostream>
 #include <istream>
+#include <string.h>
 
 using namespace std;
 
@@ -35,4 +36,31 @@ int main(){
 
     //closing a file
     myFile.close();
+
+    // //updating a file
+    myFile.open(filename+".txt", ios::app);
+
+    myFile << "More text";
+
+    myFile.close(); //close the file
+
+    //do you want to delete file
+    char toDel = 'n';
+    char deleteFile[20];
+    char fileExt[] =".txt";
+
+    cout << "Do you want to delete the file (y|n): ";
+
+    cin>>toDel;
+
+    if(toDel == 'y'){
+        cout<<"Type filename with extension to confirm: " ;
+        cin >> deleteFile;
+
+        remove(deleteFile); //removes file
+    }
+
+
+    return 0;
+
 }
